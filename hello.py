@@ -20,7 +20,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b40c078d12ec4b:c47aae51@us-cdbr
 
 @app.route('/')
 def hello():
-    logging.basicConfig(filename='error.log',level=logging.DEBUG)
+    #logging.basicConfig(filename='error.log',level=logging.DEBUG)
 
     #sess = db.create_engine('mysql://b40c078d12ec4b:c47aae51@us-cdbr-east-05.cleardb.net/heroku_f96716167ae3b98')
     #myconn = db.connect()
