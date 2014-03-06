@@ -9,6 +9,13 @@ db = SQLAlchemy(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b40c078d12ec4b:c47aae51@us-cdbr-east-05.cleardb.net/heroku_f96716167ae3b98'
 
+@app.before_first_request
+def setup_logging():
+    if not app.debug:
+        # In production mode, add log handler to sys.stderr.
+        app.logger.addHandler(logging.StreamHandler())
+        app.logger.setLevel(logging.INFO)
+
 ##class Game(db.Model):
 ##    __tablename__ = 'nba'
 ##    Q1 = db.Column(db.Integer)
@@ -20,7 +27,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b40c078d12ec4b:c47aae51@us-cdbr
 
 @app.route('/')
 def hello():
-    #logging.basicConfig(filename='error.log',level=logging.DEBUG)
+    logging.basicConfig(filename='error.log',level=logging.DEBUG)
 
     #sess = db.create_engine('mysql://b40c078d12ec4b:c47aae51@us-cdbr-east-05.cleardb.net/heroku_f96716167ae3b98')
     #myconn = db.connect()
