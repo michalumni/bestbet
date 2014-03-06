@@ -7,8 +7,8 @@ from sqlalchemy import create_engine, MetaData
 app = Flask(__name__)
 db = SQLAlchemy(app)
 
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b40c078d12ec4b:c47aae51@us-cdbr-east-05.cleardb.net/heroku_f96716167ae3b98'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('CLEARDB_DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b40c078d12ec4b:c47aae51@us-cdbr-east-05.cleardb.net/heroku_f96716167ae3b98'
+#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('CLEARDB_DATABASE_URL')
 
 @app.before_first_request
 def setup_logging():
