@@ -29,7 +29,7 @@ def setup_logging():
 ##    Q4 = db.Column(db.Integer)
 ##    FG = db.Column(db.Integer)
 
-@app.route('/process')
+@app.route('/process', methods=['GET', 'POST'])
 def processMethod():
     return 'hello'
 
