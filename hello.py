@@ -3,7 +3,10 @@
 import os, logging
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine, MetaData 
+from sqlalchemy import create_engine, MetaData
+from forms import SelectionForm
+from flask import render_template, request
+
 app = Flask(__name__)
 db = SQLAlchemy(app)
 
@@ -26,16 +29,28 @@ def setup_logging():
 ##    Q4 = db.Column(db.Integer)
 ##    FG = db.Column(db.Integer)
 
-@app.route('/')
-def hello():
-    logging.basicConfig(filename='error.log',level=logging.DEBUG)
+@app.route('/process')
+def processMethod():
+    return 'hello'
 
+@app.route('/', methods=['GET', 'POST'])
+def hello():
+    
+    if (request.method == 'GET'):
+        return render_template('index.html')
+    else:
+        return 'hi'
+
+
+    #logging.basicConfig(filename='error.log',level=logging.DEBUG)
+
+#    if 
     #sess = db.create_engine('mysql://b40c078d12ec4b:c47aae51@us-cdbr-east-05.cleardb.net/heroku_f96716167ae3b98')
     #myconn = db.connect()
-    result = db.engine.execute( '''select 2Q from nba where 1Q=45 and fg=205''')
-    result = result.fetchone()
-    for row in result:
-        return str(row)
+    #result = db.engine.execute( '''select 2Q from nba where 1Q=45 and fg=205''')
+    #result = result.fetchone()
+    #for row in result:
+    #    return str(row)
     
     #return 'hello world'
     #engine = create_engine('mysql://b40c078d12ec4b:c47aae51@us-cdbr-east-05.cleardb.net/heroku_f96716167ae3b98')
