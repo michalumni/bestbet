@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Best Bet</h1>
+    <form method="post" action="{{ url_for('hello') }}">
+        <p><label>Sport:</label>  <select>
+        <option value="nfl" disabled="disabled">NFL</option>
+        <option value="nba">NBA</option>
+        <option value="ncaaf">College Football</option>
+        <option value="ncaab">College Basketball</option>
+        </select> 
+        <p><label>Kelly Criterion:</label> <input type="text" name="kelly" required></p>
+        <p><label>Username:</label> <input type="text" name="username" required></p>
+        <p><label>Message:</label> <textarea name="message"></textarea></p>
+        <p><button type="submit">Process</button></p>
+    </form>
+{% endblock %}

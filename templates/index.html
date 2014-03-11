@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
     <h1>Best Bet</h1>
-    <form method="post" action="{{ url_for('processMethod') }}">
+    <form method="post" action="{{ url_for('hello') }}">
         Select Sport: 
-        <select>
+        <select name="sport">
                 <option value="nfl" disabled="disabled">NFL</option>
                 <option value="nba" >NBA</option>
                 <option value="ncaaf" disabled="disabled">College Football</option>
-                <option value="ncaab" disabled="disabled">College Basketball</option>
+                <option value="ncaab">College Basketball</option>
 
         </select>
 
