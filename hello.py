@@ -4,7 +4,7 @@ import os, logging
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, MetaData
-from forms import SelectionForm
+#from forms import SelectionForm
 from flask import render_template, request
 from gameinfo import GameInfo
 import urllib2, sys, csv
