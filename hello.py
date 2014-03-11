@@ -13,6 +13,7 @@ from HTMLParser import HTMLParser
 import StringIO
 import xml.dom.minidom
 from curses.ascii import isprint
+import xml.parsers.expat
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
@@ -291,6 +292,7 @@ def processGames(games, finalGames, myform):
     conn = engine.connect()
     finalStr = '<html>'
     finalStr = finalStr + '<div style=\"text-align: center;\">' + '<title> Best Bets </title>'
+    finalStr = finalStr + '<link rel=\"stylesheet\" href=\"//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css\">'
     finalStr = finalStr + '<h1>' + duration + ' Bets' + '</h1>' + '</div>'
     for k1, v1 in games.items():
         finalStr = finalStr + '<table border=\"1\">'
@@ -406,7 +408,11 @@ def hello():
             return render_template('index.html', error=error)
         duration = myform['Interval']
         #assume all input is valid lets process
-        games = gettheGames(myform, duration)
+        try:
+            games = gettheGames(myform, duration)
+        except xml.parsers.expat.ExpatError:
+            error = 'NBA games started, please select different sport'
+            return render_template('index2.html', error=error)
         duration = 'FG'
         finalGames = gettheGames(myform, duration)
         return processGames(games, finalGames, myform)
