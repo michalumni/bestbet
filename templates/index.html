@@ -1,6 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
     <h1>Best Bet</h1>
+	{% if error %}
+    <p class=error><strong><font color='red'> Error: {{ error }}</font> </strong>
+  	{% endif %}
     <form method="post" action="{{ url_for('hello') }}">
         Select Sport: 
         <select name="sport">
@@ -12,9 +15,9 @@
         </select>
 
         <p><label>Interval (1Q, 2Q, H, 3Q, 4Q):</label> <input type="text" name="Interval" required></p>
-        <p><label>Kelly Criterion (0-100):</label> <input type="text"  name="kelly"</p>
-        <p><label>Bookmaker Bankroll:</label> <input type="text"  name="bkbr"</p>
-        <p><label>5 Dimes Bankroll:</label> <input type="text"  name="dimesbr"</p>
+        <p><label>Kelly Criterion (0-100):</label> <input type="text"  name="kelly"></p>
+        <p><label>Bookmaker Bankroll:</label> <input type="text"  name="bkbr"></p>
+        <p><label>5 Dimes Bankroll:</label> <input type="text"  name="dimesbr"></p>
 
 
         <p><button type="submit">Process</button></p>

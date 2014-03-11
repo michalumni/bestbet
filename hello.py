@@ -339,13 +339,71 @@ def processGames(games, finalGames, myform):
     finalStr = finalStr + '</html>'
     return finalStr
 
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
+def validateForm(myform):
+
+    dimesbr = (myform['dimesbr'])
+    if not is_number(dimesbr):
+        return 'Please enter a number for 5 dimes bankroll'
+    else:
+        j = float(dimesbr)
+        if j < 0:
+            return 'Please enter a positive number for 5 dimes bankroll'
+
+
+    
+    bmbr = myform['bkbr']
+    if not is_number(bmbr):
+        return 'Please enter a number for Bookmaker bankroll'
+    else:
+        j = float(bmbr)
+        if j < 0:
+            return 'Please enter a positive number for Bookmaker bankroll'
+
+
+    
+    kelly = myform['kelly']
+    if not is_number(kelly):
+        return 'Please enter a number for Kelly Criterion'
+    else:
+        j = float(kelly)
+        if j > 100 or j < 0:
+            return 'Please enter a number between 0-100 for Kelly Criterion'
+
+
+
+    
+
+    sport = myform['sport']
+
+    duration = myform['Interval']
+    if duration != '1Q' and duration != '2Q' and duration != '3Q' and duration != '4Q' and duration != 'H':
+        return 'Please Enter 1Q, 2Q, H, 3Q or 4Q for Interval'
+
+    if sport == 'ncaab' and duration != 'H':
+        return 'Interval needs to be H for college basketball'
+    
+    return ''
+
 @app.route('/', methods=['GET', 'POST'])
 def hello():
-    
+
+    error = ''
     if (request.method == 'GET'):
-        return render_template('index.html')
+        return render_template('index.html', error=error)
     else:
         myform = request.form
+        error = validateForm(myform)
+        if (error != ''):
+            app.logger.debug('error is ' + error)
+            
+            return render_template('index.html', error=error)
         duration = myform['Interval']
         #assume all input is valid lets process
         games = gettheGames(myform, duration)
