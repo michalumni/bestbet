@@ -281,8 +281,8 @@ def processFGline(var):
 
 def processGames(games, finalGames, myform):
     #parse input form
-    dimesbr = int(myform['dimesbr'])
-    bmbr = int(myform['bkbr'])
+    dimesbr = float(myform['dimesbr'])
+    bmbr = float(myform['bkbr'])
     kelly = float(myform['kelly'])/100
     sport = myform['sport']
     duration = myform['Interval']
