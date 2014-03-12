@@ -337,7 +337,7 @@ def processGames(games, finalGames, myform):
                 var = processLine(games[k1].bmu)
                 price = calculatePrice(var[1])
                 odds = calculateOdds(pinny, '<', var[0], duration, sport, conn)
-                value = calculateKelly(price, odds, kelly, dimesbr, 'Bookmaker under ')
+                value = calculateKelly(price, odds, kelly, bmbr, 'Bookmaker under ')
                 if value != '':
                     finalStr =  finalStr + '<tr bgcolor=\"red\"><td>' + value + '</td></tr>'
     
