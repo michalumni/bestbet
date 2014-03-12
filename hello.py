@@ -212,8 +212,8 @@ def parseWebsite(doc):
  
 
 def gettheGames(myform, duration):
-    dimesbr = int(myform['dimesbr'])
-    bmbr = int(myform['bkbr'])
+    dimesbr = float(myform['dimesbr'])
+    bmbr = float(myform['bkbr'])
     kelly = float(myform['kelly'])/100
     sport = myform['sport']
     
