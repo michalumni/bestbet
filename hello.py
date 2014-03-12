@@ -66,7 +66,17 @@ def calculateKelly(price, odds, kelly, br, printstr):
     #odds = odds/100.00
     value = ((odds * price) - 1)/(price - 1)
     if ((value * kelly) > .01):
-        return (printstr + str(value * kelly * br * (price-1)))
+        #myStr = (printstr + str(value * kelly * br * (price-1)))
+        val = (value * kelly * br * (price-1))
+        myVal = "%.2f" % val
+        myStr = printstr + myVal
+        return myStr
+##        #if '.' in myStr:
+##            index = myStr.find('.')
+##            #return myStr.substr(0, index+2)
+##            return myStr[0:index+2]
+##        else:
+##            return myStr
     else:
         return ''
 
