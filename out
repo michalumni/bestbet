@@ -1,0 +1,112 @@
+(
+        {
+        on = 1;
+        replace = "1-";
+        with = "\\Ud83d\\Udd50";
+    },
+        {
+        on = 1;
+        replace = "2-";
+        with = "\\Ud83d\\Udd51";
+    },
+        {
+        on = 1;
+        replace = "3-";
+        with = "\\Ud83d\\Udd52";
+    },
+        {
+        on = 1;
+        replace = "4-";
+        with = "\\Ud83d\\Udd53";
+    },
+        {
+        on = 1;
+        replace = "5-";
+        with = "\\Ud83d\\Udd54";
+    },
+        {
+        on = 1;
+        replace = "6-";
+        with = "\\Ud83d\\Udd55";
+    },
+        {
+        on = 1;
+        replace = "7-";
+        with = "\\Ud83d\\Udd56";
+    },
+        {
+        on = 1;
+        replace = "8-";
+        with = "\\Ud83d\\Udd57";
+    },
+        {
+        on = 1;
+        replace = "9-";
+        with = "\\Ud83d\\Udd58";
+    },
+        {
+        on = 1;
+        replace = "10-";
+        with = "\\Ud83d\\Udd59";
+    },
+        {
+        on = 1;
+        replace = "11-";
+        with = "\\Ud83d\\Udd5a";
+    },
+        {
+        on = 1;
+        replace = "500-";
+        with = "5\\U20e3\\U2716\\Ufe0f\\Ud83d\\Udcaf";
+    },
+        {
+        on = 1;
+        replace = "chicks-";
+        with = "\\Ud83d\\Udc23\\Ud83d\\Udc25\\Ud83d\\Udc24";
+    },
+        {
+        on = 1;
+        replace = "ghost-";
+        with = "\\Ud83d\\Udc7b";
+    },
+        {
+        on = 1;
+        replace = "indian-";
+        with = "\\Ud83d\\Udc73";
+    },
+        {
+        on = 1;
+        replace = "jlp-";
+        with = "\\Ud83d\\Udc74";
+    },
+        {
+        on = 1;
+        replace = masks;
+        with = "\\Ud83c\\Udfad";
+    },
+        {
+        on = 1;
+        replace = "noon-";
+        with = "\\Ud83d\\Udd5b";
+    },
+        {
+        on = 1;
+        replace = omw;
+        with = "On my way1!";
+    },
+        {
+        on = 1;
+        replace = "pj-";
+        with = "\\Ud83c\\Ude51";
+    },
+        {
+        on = 1;
+        replace = "puss-";
+        with = "\\Ud83d\\Udc31";
+    },
+        {
+        on = 1;
+        replace = "riker-";
+        with = "\\Ud83d\\Udc68";
+    }
+)
